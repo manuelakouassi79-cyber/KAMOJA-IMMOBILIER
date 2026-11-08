@@ -5,14 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamoja Immobilier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'system-ui', '-apple-system', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+                        heading: ['Lora', 'Georgia', 'serif'],
+                    },
                     colors: {
                         primary: '#ff6b6b',
+                        brand: {
+                            DEFAULT: '#17324E',
+                            light: '#245080',
+                        },
                         secondary: '#ff8e8e',
                     },
                     animation: {
@@ -37,6 +48,11 @@
 
         img {
             max-width: 100%;
+        }
+
+        /* Titres en Lora, le reste en Segoe UI (police par défaut du site) */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', Georgia, serif;
         }
 
         .nav-link::after {
@@ -118,7 +134,7 @@
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Bienvenue chez Kamoja Immobilier</h1>
                 <p class="text-lg sm:text-xl mb-5 sm:mb-6">là où vos rêves prennent vie</p>
                 <a href="#nosBien"
-                    class="inline-block bg-primary hover:bg-red-500 text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-colors duration-300 text-sm sm:text-base">
+                    class="inline-block bg-brand hover:bg-brand-light border border-white/40 text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-colors duration-300 text-sm sm:text-base">
                     DÉCOUVRIR NOS OFFRES
                 </a>
             </div>
@@ -126,7 +142,7 @@
     </div>
 
     <!-- Nos services -->
-    <section class="py-12 bg-gray-900 text-gray-100 lg:py-16" id="service">
+    <section class="py-12 bg-brand text-gray-100 lg:py-16" id="service">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="max-w-xl mx-auto text-center xl:max-w-2xl">
                 <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6">Nos Services</h2>
@@ -212,16 +228,16 @@
                     <img src="image/m1.jpg" alt="Villa 2 chambres avec jardin" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     <a href="#contact"
-                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-brand text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-brand-light">
                         Nous contacter
                     </a>
                 </div>
                 <div class="p-4">
                     <h3 class="font-semibold text-lg">Villa 2 Chambres avec Jardin</h3>
-                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                    <div class="flex justify-center items-center mt-2 text-[#C5A56B]">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">30 000 000 FCFA</p>
+                    <p class="text-brand font-bold text-lg sm:text-xl mt-2">30 000 000 FCFA</p>
                 </div>
             </div>
 
@@ -231,16 +247,16 @@
                     <img src="image/M2%20(2).jpg" alt="Duplex 4 pièces haut standing" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     <a href="#contact"
-                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-brand text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-brand-light">
                         Nous contacter
                     </a>
                 </div>
                 <div class="p-4">
                     <h3 class="font-semibold text-lg">Duplex 4 Pièces - Haut Standing</h3>
-                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                    <div class="flex justify-center items-center mt-2 text-[#C5A56B]">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                     </div>
-                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">50 000 000 FCFA</p>
+                    <p class="text-brand font-bold text-lg sm:text-xl mt-2">50 000 000 FCFA</p>
                 </div>
             </div>
 
@@ -250,16 +266,16 @@
                     <img src="image/m3.jpg" alt="Villa 2 chambres économique" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     <a href="#contact"
-                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-brand text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-brand-light">
                         Nous contacter
                     </a>
                 </div>
                 <div class="p-4">
                     <h3 class="font-semibold text-lg">Villa 2 Chambres - Économique</h3>
-                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                    <div class="flex justify-center items-center mt-2 text-[#C5A56B]">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">25 000 000 FCFA</p>
+                    <p class="text-brand font-bold text-lg sm:text-xl mt-2">25 000 000 FCFA</p>
                 </div>
             </div>
 
@@ -269,16 +285,16 @@
                     <img src="image/m4.jpg" alt="Villa 1 chambre économique" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
                     <a href="#contact"
-                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-brand text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-brand-light">
                         Nous contacter
                     </a>
                 </div>
                 <div class="p-4">
                     <h3 class="font-semibold text-lg">Villa 1 Chambre - Économique</h3>
-                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                    <div class="flex justify-center items-center mt-2 text-[#C5A56B]">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">18 000 000 FCFA</p>
+                    <p class="text-brand font-bold text-lg sm:text-xl mt-2">18 000 000 FCFA</p>
                 </div>
             </div>
         </div>
@@ -309,7 +325,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-10 sm:py-12 px-4 sm:px-6" id="contact">
+    <footer class="bg-brand text-white py-10 sm:py-12 px-4 sm:px-6" id="contact">
         <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
 
             <div>
@@ -373,7 +389,7 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+        <div class="border-t border-white/20 mt-8 pt-6 text-center text-gray-400 text-sm">
             <p>&copy; 2026 KAMOJA IMMOBILIER. Tous droits réservés.</p>
         </div>
     </footer>
