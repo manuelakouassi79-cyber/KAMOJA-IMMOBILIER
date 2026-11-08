@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern E-commerce Site</title>
+    <title>Kamoja Immobilier</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -16,14 +16,9 @@
                         secondary: '#ff8e8e',
                     },
                     animation: {
-                        'shine': 'shine 3s infinite',
                         'fadeInUp': 'fadeInUp 0.8s forwards',
-                        'pulse-slow': 'pulse 3s infinite',
                     },
                     keyframes: {
-                        shine: {
-                            '100%': { left: '100%' },
-                        },
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -34,29 +29,14 @@
         }
     </script>
     <style type="text/css">
-        .offer-banner::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shine 3s infinite;
+        html {
+            scroll-behavior: smooth;
+            /* évite que la barre de navigation collante cache le titre des sections */
+            scroll-padding-top: 5rem;
         }
 
-        .coupon-box::before {
-            content: "10% OFF";
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background-color: #ff6b6b;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            transform: rotate(15deg);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        img {
+            max-width: 100%;
         }
 
         .nav-link::after {
@@ -75,167 +55,141 @@
         }
 
         #logo {
-            height: 3em;
+            height: 2.5rem;
+            width: auto;
         }
 
-        #apropos {
-            margin-top: 100px;
-            margin-bottom: 200px;
+        @media (min-width: 640px) {
+            #logo {
+                height: 3rem;
+            }
         }
-        .aPropos{
-            text-align: center;
-        }
-
-      
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
 
     <!-- Navigation Bar -->
-    <nav class="flex justify-between items-center px-5 py-5 bg-white shadow-md sticky top-0 z-50">
-        <!-- <div class="text-2xl font-bold text-gray-800">kamoja immobilier</div> -->
-        <img src="/image/jael.png" alt="logo" id="logo">
-
-        <ul class="flex space-x-8">
-            <li class="relative">
-                <a href="#accueil"
-                    class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Accueil</a>
-            </li>
-
-            <li class="relative">
-                <a href="#service"
-                    class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Service</a>
-            </li>
-            <li class="relative">
-                <a href="#nosBien"
-                    class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Nos
-                    bien</a>
-            </li>
-            <li class="relative">
-                <a href="#aPropos"
-                    class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">À
-                    propos</a>
-            </li>
-            <li class="relative">
-                <a href="#contact"
-                    class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Contact</a>
-            </li>
-        </ul>
-
-        <div class="flex items-center space-x-5">
-            <a href="#" class="text-gray-800 hover:text-primary transition-all duration-300 hover:-translate-y-1">
-                <i class="fas fa-search text-xl"></i>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="flex justify-between items-center px-4 sm:px-6 py-3 max-w-7xl mx-auto">
+            <a href="#accueil" class="shrink-0">
+                <img src="image/jael.png" alt="Logo Kamoja Immobilier" id="logo">
             </a>
-            <a href="#" class="text-gray-800 hover:text-primary transition-all duration-300 hover:-translate-y-1">
-                <i class="fas fa-shopping-cart text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-800 hover:text-primary transition-all duration-300 hover:-translate-y-1">
-                <i class="fas fa-user text-xl"></i>
-            </a>
+
+            <!-- Menu desktop -->
+            <ul class="hidden md:flex space-x-8">
+                <li class="relative"><a href="#accueil" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Accueil</a></li>
+                <li class="relative"><a href="#service" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Services</a></li>
+                <li class="relative"><a href="#nosBien" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Nos biens</a></li>
+                <li class="relative"><a href="#aPropos" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">À propos</a></li>
+                <li class="relative"><a href="#contact" class="nav-link text-gray-800 font-medium hover:text-primary transition-colors duration-300">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center space-x-4 sm:space-x-5">
+                <a href="#" aria-label="Rechercher" class="text-gray-800 hover:text-primary transition-all duration-300 hover:-translate-y-1">
+                    <i class="fas fa-search text-xl"></i>
+                </a>
+                <a href="tel:+2250789950597" aria-label="Appeler" class="text-gray-800 hover:text-primary transition-all duration-300 hover:-translate-y-1">
+                    <i class="fas fa-phone text-xl"></i>
+                </a>
+                <!-- Bouton hamburger (mobile) -->
+                <button id="menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false"
+                    class="md:hidden text-gray-800 hover:text-primary focus:outline-none">
+                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
         </div>
+
+        <!-- Menu mobile -->
+        <ul id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-4 pb-3 bg-white">
+            <li><a href="#accueil" class="block py-3 text-gray-800 font-medium hover:text-primary">Accueil</a></li>
+            <li><a href="#service" class="block py-3 text-gray-800 font-medium hover:text-primary">Services</a></li>
+            <li><a href="#nosBien" class="block py-3 text-gray-800 font-medium hover:text-primary">Nos biens</a></li>
+            <li><a href="#aPropos" class="block py-3 text-gray-800 font-medium hover:text-primary">À propos</a></li>
+            <li><a href="#contact" class="block py-3 text-gray-800 font-medium hover:text-primary">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Hero Banner -->
-    <div class="relative h-96 overflow-hidden" id="accueil">
-        <img src="image/manou.jpg" alt="Fashion Sale" class="w-full h-full object-cover object-center" loading="lazy">
-        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+    <div class="relative h-80 sm:h-96 lg:h-[28rem] overflow-hidden" id="accueil">
+        <img src="image/manou.jpg" alt="Kamoja Immobilier" class="w-full h-full object-cover object-center" loading="lazy">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
             <div class="text-center text-white px-4 animate-fadeInUp">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Bienvenue chez Kamoja Immobilier</h1>
-                <p class="text-xl mb-6">là où vos rêves prennent vie</p>
-                <button
-                    class="bg-primary hover:bg-red-500 text-white px-8 py-3 rounded-full font-medium transition-colors duration-300">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Bienvenue chez Kamoja Immobilier</h1>
+                <p class="text-lg sm:text-xl mb-5 sm:mb-6">là où vos rêves prennent vie</p>
+                <a href="#nosBien"
+                    class="inline-block bg-primary hover:bg-red-500 text-white px-6 sm:px-8 py-3 rounded-full font-medium transition-colors duration-300 text-sm sm:text-base">
                     DÉCOUVRIR NOS OFFRES
-                </button>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- nos service -->
-    <section class="py-12 bg-gray-900 text-gray-100 sm:py-12 lg:py-16" id="service">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 ">
+    <!-- Nos services -->
+    <section class="py-12 bg-gray-900 text-gray-100 lg:py-16" id="service">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="max-w-xl mx-auto text-center xl:max-w-2xl">
                 <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6">Nos Services</h2>
-                <p class="mb-4">Nous vous accompagnons à chaque étape pour trouver le logement idéal et concrétiser
+                <p class="mb-4 text-sm sm:text-base">Nous vous accompagnons à chaque étape pour trouver le logement idéal et concrétiser
                     votre rêve de devenir propriétaire</p>
             </div>
 
-            <!-- Grille configurée en 1 colonne sur mobile et 2 colonnes à partir de 'sm' -->
-            <div
-                class="grid max-w-4xl lg:max-w-5xl grid-cols-1 mx-auto mt-8 text-center gap-6 sm:grid-cols-2 sm:mt-12 lg:mt-20 sm:text-left">
+            <div class="grid max-w-4xl lg:max-w-5xl grid-cols-1 mx-auto mt-8 text-center gap-8 sm:grid-cols-2 sm:mt-12 lg:mt-16 sm:text-left">
 
                 <!-- Carte 1 -->
                 <div class="relative">
                     <div class="absolute -inset-1">
-                        <div
-                            class="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
-                        </div>
+                        <div class="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600"></div>
                     </div>
                     <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
-                        <div class="p-9">
-                            <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        <div class="p-6 sm:p-9">
+                            <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 8L20 8" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
                                 <path d="M4 16L14 16" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
-                                <ellipse cx="7" cy="8" rx="3" ry="3" transform="rotate(90 7 8)" stroke="#111827"
-                                    stroke-width="2" stroke-linecap="round"></ellipse>
-                                <ellipse cx="17" cy="16" rx="3" ry="3" transform="rotate(90 17 16)" stroke="#111827"
-                                    stroke-width="2" stroke-linecap="round"></ellipse>
+                                <ellipse cx="7" cy="8" rx="3" ry="3" transform="rotate(90 7 8)" stroke="#111827" stroke-width="2" stroke-linecap="round"></ellipse>
+                                <ellipse cx="17" cy="16" rx="3" ry="3" transform="rotate(90 17 16)" stroke="#111827" stroke-width="2" stroke-linecap="round"></ellipse>
                             </svg>
-                            <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Location-vente immobilière</h3>
-                            <p class="mt-6 text-base text-gray-600">Devenez propriétaire en 5 ans grâce à notre solution
+                            <h3 class="mt-5 text-xl sm:text-2xl font-bold text-gray-900 sm:mt-8">Location-vente immobilière</h3>
+                            <p class="mt-4 text-base text-gray-600">Devenez propriétaire en 5 ans grâce à notre solution
                                 de location-vente. Transformez progressivement vos loyers en investissement pour votre
-                                futur logement, sans crédit bancaire .</p>
+                                futur logement, sans crédit bancaire.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Carte 2 -->
                 <div class="overflow-hidden bg-white shadow-md rounded-xl h-full">
-                    <div class="p-9">
-                        <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                    <div class="p-6 sm:p-9">
+                        <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="13" y="14" width="2" height="2" rx="1" fill="#111827"></rect>
                             <rect x="7" y="11" width="2" height="6" rx="1" fill="#111827"></rect>
-                            <rect x="11" y="13" width="2" height="6" rx="1" transform="rotate(90 11 13)" fill="#111827">
-                            </rect>
+                            <rect x="11" y="13" width="2" height="6" rx="1" transform="rotate(90 11 13)" fill="#111827"></rect>
                             <rect x="16" y="12" width="2" height="2" rx="1" fill="#111827"></rect>
-                            <path
-                                d="M14 8V8C14 7.58326 14 7.37488 13.9655 7.19144C13.8455 6.5546 13.4245 6.01534 12.8358 5.74455C12.6662 5.66654 12.464 5.616 12.0597 5.51493L12 5.5C11.5388 5.3847 11.3082 5.32706 11.1171 5.233C10.5686 4.96315 10.1737 4.45731 10.0449 3.85979C10 3.65151 10 3.41382 10 2.93845V2"
-                                stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
-                            <path
-                                d="M3 14C3 11.4412 3 10.1618 3.61994 9.28042C3.77954 9.05351 3.96572 8.85041 4.17372 8.6763C4.98164 8 6.15442 8 8.5 8H15.5C17.8456 8 19.0184 8 19.8263 8.6763C20.0343 8.85041 20.2205 9.05351 20.3801 9.28042C21 10.1618 21 11.4412 21 14C21 16.5588 21 17.8382 20.3801 18.7196C20.2205 18.9465 20.0343 19.1496 19.8263 19.3237C19.0184 20 17.8456 20 15.5 20H8.5C6.15442 20 4.98164 20 4.17372 19.3237C3.96572 19.1496 3.77954 18.9465 3.61994 18.7196C3 17.8382 3 16.5588 3 14Z"
-                                stroke="#111827" stroke-width="2"></path>
+                            <path d="M14 8V8C14 7.58326 14 7.37488 13.9655 7.19144C13.8455 6.5546 13.4245 6.01534 12.8358 5.74455C12.6662 5.66654 12.464 5.616 12.0597 5.51493L12 5.5C11.5388 5.3847 11.3082 5.32706 11.1171 5.233C10.5686 4.96315 10.1737 4.45731 10.0449 3.85979C10 3.65151 10 3.41382 10 2.93845V2" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
+                            <path d="M3 14C3 11.4412 3 10.1618 3.61994 9.28042C3.77954 9.05351 3.96572 8.85041 4.17372 8.6763C4.98164 8 6.15442 8 8.5 8H15.5C17.8456 8 19.0184 8 19.8263 8.6763C20.0343 8.85041 20.2205 9.05351 20.3801 9.28042C21 10.1618 21 11.4412 21 14C21 16.5588 21 17.8382 20.3801 18.7196C20.2205 18.9465 20.0343 19.1496 19.8263 19.3237C19.0184 20 17.8456 20 15.5 20H8.5C6.15442 20 4.98164 20 4.17372 19.3237C3.96572 19.1496 3.77954 18.9465 3.61994 18.7196C3 17.8382 3 16.5588 3 14Z" stroke="#111827" stroke-width="2"></path>
                         </svg>
-                        <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10"> Accompagnement complet</h3>
-                        <p class="mt-6 text-base text-gray-600">Nous vous guidons à chaque étape de votre projet
+                        <h3 class="mt-5 text-xl sm:text-2xl font-bold text-gray-900 sm:mt-8">Accompagnement complet</h3>
+                        <p class="mt-4 text-base text-gray-600">Nous vous guidons à chaque étape de votre projet
                             immobilier, du premier contact jusqu'à la concrétisation de votre rêve de propriété, avec
                             transparence et sérénité.</p>
                     </div>
                 </div>
 
-                <!-- Carte 3 : Centrée sur la deuxième ligne grâce à sm:col-span-2 et sm:max-w-md mx-auto -->
+                <!-- Carte 3 : centrée sur la 2e ligne à partir de sm -->
                 <div class="relative sm:col-span-2 sm:max-w-md sm:mx-auto w-full">
                     <div class="absolute -inset-1">
-                        <div
-                            class="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
-                        </div>
+                        <div class="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600"></div>
                     </div>
                     <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
-                        <div class="p-9">
-                            <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        <div class="p-6 sm:p-9">
+                            <svg class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 8L20 8" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
                                 <path d="M4 16L14 16" stroke="#111827" stroke-width="2" stroke-linecap="round"></path>
-                                <ellipse cx="7" cy="8" rx="3" ry="3" transform="rotate(90 7 8)" stroke="#111827"
-                                    stroke-width="2" stroke-linecap="round"></ellipse>
-                                <ellipse cx="17" cy="16" rx="3" ry="3" transform="rotate(90 17 16)" stroke="#111827"
-                                    stroke-width="2" stroke-linecap="round"></ellipse>
+                                <ellipse cx="7" cy="8" rx="3" ry="3" transform="rotate(90 7 8)" stroke="#111827" stroke-width="2" stroke-linecap="round"></ellipse>
+                                <ellipse cx="17" cy="16" rx="3" ry="3" transform="rotate(90 17 16)" stroke="#111827" stroke-width="2" stroke-linecap="round"></ellipse>
                             </svg>
-                            <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">Conseil et gestion immobilière
-                            </h3>
-                            <p class="mt-6 text-base text-gray-600"> Bénéficiez de notre expertise pour mieux gérer,
+                            <h3 class="mt-5 text-xl sm:text-2xl font-bold text-gray-900 sm:mt-8">Conseil et gestion immobilière</h3>
+                            <p class="mt-4 text-base text-gray-600">Bénéficiez de notre expertise pour mieux gérer,
                                 valoriser et sécuriser votre patrimoine immobilier grâce à des conseils adaptés à vos
                                 besoins.</p>
                         </div>
@@ -246,235 +200,206 @@
         </div>
     </section>
 
+    <!-- Nos biens -->
+    <section class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-7xl mx-auto text-center" id="nosBien">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 animate-fadeInUp" style="animation-delay: 0.5s;">NOS BIENS</h2>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 
-    <!-- Featured Products Section -->
-    <div class="featured-section px-5 py-16 text-center" id="nosBien">
-        <div class="section-header flex justify-between items-center mb-10 animate-fadeInUp"
-            style="animation-delay: 0.5s;">
-            <h2 class="text-3xl font-bold mx-auto">NOS BIENS</h2>
-
-        </div>
-
-        <!-- Product Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Product 1 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp"
-                style="animation-delay: 0.6s;">
+            <!-- Bien 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp" style="animation-delay: 0.6s;">
                 <div class="relative overflow-hidden group">
-                    <img src="image/m1.jpg" alt="Men's Casual Shirt" class="w-full h-64 object-cover" loading="lazy">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300">
-                    </div>
-                    <button
-                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
-                        Add to Cart
-                    </button>
+                    <img src="image/m1.jpg" alt="Villa 2 chambres avec jardin" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    <a href="#contact"
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        Nous contacter
+                    </a>
                 </div>
                 <div class="p-4">
-                    <h3 class="font-semibold text-lg">Casual Linen Shirt</h3>
-                    <div class="flex justify-center items-center mt-2">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="text-gray-500 text-sm ml-2"></span>
+                    <h3 class="font-semibold text-lg">Villa 2 Chambres avec Jardin</h3>
+                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="text-primary font-bold text-xl mt-2">35 000 000 FCFA</p>
+                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">30 000 000 FCFA</p>
                 </div>
             </div>
 
-            <!-- Product 2 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp"
-                style="animation-delay: 0.7s;">
+            <!-- Bien 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp" style="animation-delay: 0.7s;">
                 <div class="relative overflow-hidden group">
-                    <img src="image/M2 (2).jpg" alt="Women's Summer Dress" class="w-full h-64 object-cover"
-                        loading="lazy">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300">
-                    </div>
-                    <button
-                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
-                        Add to Cart
-                    </button>
+                    <img src="image/M2%20(2).jpg" alt="Duplex 4 pièces haut standing" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    <a href="#contact"
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        Nous contacter
+                    </a>
                 </div>
                 <div class="p-4">
-                    <h3 class="font-semibold text-lg">Summer Floral Dress</h3>
-                    <div class="flex justify-center items-center mt-2">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <span class="text-gray-500 text-sm ml-2"></span>
+                    <h3 class="font-semibold text-lg">Duplex 4 Pièces - Haut Standing</h3>
+                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                     </div>
-                    <p class="text-primary font-bold text-xl mt-2">75 000 000 FCFA </p>
+                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">50 000 000 FCFA</p>
                 </div>
             </div>
 
-            <!-- Product 3 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp"
-                style="animation-delay: 0.8s;">
+            <!-- Bien 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp" style="animation-delay: 0.8s;">
                 <div class="relative overflow-hidden group">
-                    <img src="image/m3.jpg" alt="Men's Sneakers" class="w-full h-64 object-cover" loading="lazy">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300">
-                    </div>
-                    <button
-                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
-                        Add to Cart
-                    </button>
+                    <img src="image/m3.jpg" alt="Villa 2 chambres économique" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    <a href="#contact"
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        Nous contacter
+                    </a>
                 </div>
                 <div class="p-4">
-                    <h3 class="font-semibold text-lg">Classic White Sneakers</h3>
-                    <div class="flex justify-center items-center mt-2">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="text-gray-500 text-sm ml-2"></span>
+                    <h3 class="font-semibold text-lg">Villa 2 Chambres - Économique</h3>
+                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="text-primary font-bold text-xl mt-2">40 000 000 FCFA</p>
+                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">25 000 000 FCFA</p>
                 </div>
             </div>
 
-            <!-- Product 4 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp"
-                style="animation-delay: 0.9s;">
+            <!-- Bien 4 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 animate-fadeInUp" style="animation-delay: 0.9s;">
                 <div class="relative overflow-hidden group">
-                    <img src="image/m4.jpg" alt="Women's Handbag" class="w-full h-64 object-cover" loading="lazy">
-                    <div
-                        class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300">
-                    </div>
-                    <button
-                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
-                        Add to Cart
-                    </button>
+                    <img src="image/m4.jpg" alt="Villa 1 chambre économique" class="w-full h-56 sm:h-64 object-cover" loading="lazy">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    <a href="#contact"
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-white px-6 py-2 rounded-full text-sm md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 hover:bg-red-500">
+                        Nous contacter
+                    </a>
                 </div>
                 <div class="p-4">
-                    <h3 class="font-semibold text-lg">Leather Crossbody Bag</h3>
-                    <div class="flex justify-center items-center mt-2">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="text-gray-500 text-sm ml-2"></span>
+                    <h3 class="font-semibold text-lg">Villa 1 Chambre - Économique</h3>
+                    <div class="flex justify-center items-center mt-2 text-yellow-400">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="text-primary font-bold text-xl mt-2">25 000 000 FCFA</p>
+                    <p class="text-primary font-bold text-lg sm:text-xl mt-2">18 000 000 FCFA</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Newsletter Section -->
-    
-    <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="apropos">
-        <h1 class="aPropos text-3xl font-bold mx-auto" id="aPropos">A propos</h1>
+    <!-- À propos -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20" id="aPropos">
+        <h2 class="text-center text-2xl sm:text-3xl font-bold">À propos</h2>
 
-        <div
-            class="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
-            <div class="sm:text-center lg:text-left">
-                <h1 class="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
-                    <span class="block xl:inline"> </span>
-                    <span class="block text-indigo-600 xl:inline"></span>
-                </h1>
-                <p
-                    class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                    Kamoja Immobilier est une entreprise ivoirienne qui repense l'accès à la propriété grâce à la
+        <div class="mt-8 sm:mt-10 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+            <div class="lg:w-1/2 space-y-4 text-base sm:text-lg text-gray-500 text-left">
+                <p>Kamoja Immobilier est une entreprise ivoirienne qui repense l'accès à la propriété grâce à la
                     location-vente. Nous proposons une solution qui permet à chacun de construire progressivement son
-                    patrimoine tout en profitant d'un logement confortable et sécurisé.
-                     <br> <br>
-                    Notre mission est de transformer chaque loyer en un pas vers la propriété, grâce à une solution
-                    transparente, accessible et adaptée aux réalités de nos clients.
-                    <br> <br>
-                    Notre vision est de devenir, d'ici cinq ans, la référence de la location-vente immobilière en Côte
-                    d'Ivoire et de faire de ce modèle une véritable alternative pour accéder à la propriété.
-                    <br> <br>
-                    Choisir Kamoja Immobilier, c'est bénéficier d'un accompagnement complet, de conditions
+                    patrimoine tout en profitant d'un logement confortable et sécurisé.</p>
+                <p>Notre mission est de transformer chaque loyer en un pas vers la propriété, grâce à une solution
+                    transparente, accessible et adaptée aux réalités de nos clients.</p>
+                <p>Notre vision est de devenir, d'ici cinq ans, la référence de la location-vente immobilière en Côte
+                    d'Ivoire et de faire de ce modèle une véritable alternative pour accéder à la propriété.</p>
+                <p>Choisir Kamoja Immobilier, c'est bénéficier d'un accompagnement complet, de conditions
                     transparentes, d'une solution accessible sans apport important dès le départ et d'un engagement
-                    durable à vos côtés pour concrétiser votre projet immobilier.
-                </p>
-                <!-- Button Section -->
-
-                <!-- End of Button Section -->
+                    durable à vos côtés pour concrétiser votre projet immobilier.</p>
             </div>
 
-            <!--   Image Section     -->
-            <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="image/aPropos.jpg"
-                    alt="">
+            <div class="lg:w-1/2 w-full">
+                <img class="w-full h-64 sm:h-80 lg:h-[28rem] object-cover rounded-xl shadow-md" src="image/aPropos.jpg" alt="À propos de Kamoja Immobilier" loading="lazy">
             </div>
-            <!--   End of Image Section     -->
         </div>
-
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12 px-5" id="contact">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer class="bg-gray-800 text-white py-10 sm:py-12 px-4 sm:px-6" id="contact">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center sm:text-left">
+
             <div>
                 <h3 class="text-xl font-bold mb-4">KAMOJA IMMOBILIER</h3>
-                <p class="text-gray-400">Votre partenaire de confiance pour un avenir sereinInfo@kamojaimmobilier.com(+225) 07 89 95 05 97Côte d’Ivoire Abidjan Cocody deux plateaux </p>
+                <p class="text-gray-400 mb-4">Votre partenaire de confiance pour un avenir serein</p>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start justify-center sm:justify-start gap-3">
+                        <i class="fas fa-envelope mt-1"></i>
+                        <a href="mailto:Info@kamojaimmobilier.com" class="hover:text-white transition-colors duration-300 break-all">Info@kamojaimmobilier.com</a>
+                    </li>
+                    <li class="flex items-start justify-center sm:justify-start gap-3">
+                        <i class="fas fa-phone mt-1"></i>
+                        <a href="tel:+2250789950597" class="hover:text-white transition-colors duration-300">(+225) 07 89 95 05 97</a>
+                    </li>
+                    <li class="flex items-start justify-center sm:justify-start gap-3">
+                        <i class="fas fa-location-dot mt-1"></i>
+                        <span>Côte d'Ivoire, Abidjan, Cocody Deux Plateaux</span>
+                    </li>
+                </ul>
             </div>
+
             <div>
                 <h4 class="font-semibold text-lg mb-4">Liens</h4>
                 <ul class="space-y-2">
                     <li><a href="#accueil" class="text-gray-400 hover:text-white transition-colors duration-300">Accueil</a></li>
-                    <li><a href="#service" class="text-gray-400 hover:text-white transition-colors duration-300">Service</a>
-                    </li>
-                    <li><a href="#nosBien" class="text-gray-400 hover:text-white transition-colors duration-300">Nos bien</a></li>
-                    <li><a href="#aPropos" class="text-gray-400 hover:text-white transition-colors duration-300">À propos</a>
-                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a>
-                    </li>
+                    <li><a href="#service" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
+                    <li><a href="#nosBien" class="text-gray-400 hover:text-white transition-colors duration-300">Nos biens</a></li>
+                    <li><a href="#aPropos" class="text-gray-400 hover:text-white transition-colors duration-300">À propos</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 class="font-semibold text-lg mb-4">Nos Service</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Location-vente</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Accompagnement complet
-                            </a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Conseil et gestion immobilière
-                            </a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        </a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-lg mb-4">Réseaux sociaux
 
-</h4>
-                <div class="flex space-x-4">
-                    <a href="https://www.facebook.com/share/19aMwpFJib/?mibextid=wwXIfr" class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Nos services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#service" class="text-gray-400 hover:text-white transition-colors duration-300">Location-vente</a></li>
+                    <li><a href="#service" class="text-gray-400 hover:text-white transition-colors duration-300">Accompagnement complet</a></li>
+                    <li><a href="#service" class="text-gray-400 hover:text-white transition-colors duration-300">Conseil et gestion immobilière</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Réseaux sociaux</h4>
+                <div class="flex justify-center sm:justify-start space-x-5">
+                    <a href="https://www.facebook.com/share/19aMwpFJib/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@kamojaimmobilier07?_r=1&_t=ZS-9BBfMBiTG9l" class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+                    <a href="https://www.tiktok.com/@kamojaimmobilier07?_r=1&_t=ZS-9BBfMBiTG9l" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fa-brands fa-tiktok"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+                    <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
-                       <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/2250789950597" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                        class="text-gray-400 hover:text-white transition-colors duration-300 text-2xl">
+                        <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 KAMOJA IMMOBILIER. All rights reserved.</p>
+
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+            <p>&copy; 2026 KAMOJA IMMOBILIER. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            var icon = document.getElementById('menu-icon');
+
+            function setOpen(open) {
+                menu.classList.toggle('hidden', !open);
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                icon.className = open ? 'fas fa-xmark text-2xl' : 'fas fa-bars text-2xl';
+            }
+
+            btn.addEventListener('click', function () {
+                setOpen(menu.classList.contains('hidden'));
+            });
+
+            // Ferme le menu après un clic sur un lien
+            menu.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () { setOpen(false); });
+            });
+        })();
+    </script>
 </body>
 
 </html>
